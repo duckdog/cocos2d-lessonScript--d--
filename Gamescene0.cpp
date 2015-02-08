@@ -7,13 +7,18 @@
 //　そのためコメントは自分用ですので、お許しください。
 
 #include "Gamescene0.h"
-
+#include "PlayerImageLayer.h"//レイヤー
 using namespace cocos2d;
 using namespace std;
 
 Scene *GameScene0::createGameScene0(){
     
-    //何しとるかはさっぱりです。
+    //新しく作ったレイヤーを初期化してみる。
+    PlayerImageLayer *playerimage_layer = PlayerImageLayer::create();
+    //シーンにレイヤーを追加してみる。が、なんかエラーでた。
+    this->addChild(playerimage_layer);
+   
+    //下の文は何しとるかはさっぱりです。
     Scene *scene      = Scene     ::create();
     GameScene0 *layer = GameScene0::create();
     scene->addChild(layer);                  //これをレイヤークラスの子にしてるんかなぁ
