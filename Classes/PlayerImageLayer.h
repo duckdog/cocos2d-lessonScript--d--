@@ -5,9 +5,7 @@
 //  Created by 佐藤 匠 on 2015/02/09.
 //
 //
-
-#ifndef __HelloCocos2__PlayerImageLayer__
-#define __HelloCocos2__PlayerImageLayer__
+#pragma once 
 
 #include <stdio.h>
 //レイヤー作成ヘッダー、を練習中。
@@ -21,4 +19,4 @@ public:
 };
 
 
-#endif /* defined(__HelloCocos2__PlayerImageLayer__) */
+

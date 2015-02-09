@@ -9,15 +9,18 @@
 #include "Gamescene0.h"
 #include "PlayerImageLayer.h"//レイヤー
 using namespace cocos2d;
-using namespace std;
+//using namespace std; なんか使わないほうがいい説ふじょうしたのでコメントに。消せよなんて言うなよ。
+
 
 Scene *GameScene0::createGameScene0(){
     
+    /////以下はとりあえず放置.
     //新しく作ったレイヤーを初期化してみる。
-    PlayerImageLayer *playerimage_layer = PlayerImageLayer::create();
+    //PlayerImageLayer *playerimage_layer = PlayerImageLayer::create();
     //シーンにレイヤーを追加してみる。が、なんかエラーでた。
-    this->addChild(playerimage_layer);
+    //this->addChild(playerimage_layer);
    
+    
     //下の文は何しとるかはさっぱりです。
     Scene *scene      = Scene     ::create();
     GameScene0 *layer = GameScene0::create();
@@ -31,6 +34,11 @@ bool GameScene0::init(){
     if(! CCLayer::init()){
         return false;
     }
+    
+    /* 
+     ここで画像を用意したりするらしい！
+                                */
+    
     return true;
 }
 

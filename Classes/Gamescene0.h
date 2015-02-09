@@ -6,8 +6,7 @@
 //
 //
 
-#ifndef __HelloCocos2__Gamescene0__
-#define __HelloCocos2__Gamescene0__
+#pragma once
 
 #include <stdio.h>
 class GameScene0 : public cocos2d::Layer{
@@ -23,4 +22,4 @@ public:
 };
 
 
-#endif /* defined(__HelloCocos2__Gamescene0__) */
+
