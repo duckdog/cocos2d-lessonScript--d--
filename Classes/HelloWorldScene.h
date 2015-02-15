@@ -6,7 +6,10 @@
 class HelloWorld : public cocos2d::Layer
 {
 private:
+    //画像用意.
     cocos2d::Sprite* player_image;
+    //アプデート関数.
+    void update(float delta);
     //タッチ処理用
     bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
     void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);

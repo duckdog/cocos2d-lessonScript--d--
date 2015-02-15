@@ -26,12 +26,16 @@ bool HelloWorld::init()
     {
         return false;
     }
+    //updateを定義？かな。
+    this->scheduleUpdate();
     //画面サイズを取得.
     Size WindowSize = Director::getInstance()->getVisibleSize();
     //初期背景色を変更.
     auto _bg        = LayerColor::create(Color4B(255,255,255,255),
                                          WindowSize.width,WindowSize.height);
     this->addChild(_bg);
+    
+    
     
     //タッチ処理
     auto listener = EventListenerTouchOneByOne::create();
@@ -55,13 +59,25 @@ bool HelloWorld::init()
     
        return true;
 }
+//update関数.
+void HelloWorld::update(float delta){
+    player_image->setPosition(player_image->getPositionX()+ 10*delta,player_image->getPositionY());
+}
+
+
 
 //タッチした時
 bool HelloWorld::onTouchBegan(Touch* touch, Event* event) {
-    this->getChildByTag(1)->setPosition(touch->getLocation());
+    //タッチした場所を取得.
+    auto location = touch->getLocation();
+    auto sprite   = this->getChildByTag(1);
+    //Moveto 〜秒間かけてタッチした場所まで移動.
+    sprite->runAction(MoveTo::create(1.0f,location));
+    //タッチした場所に画像をワープ.以下２文.
+    //this->getChildByTag(1)->setPosition(touch->getLocation());
+    //sprite->setPosition(location);
     return true;
 }
-
 void HelloWorld::onTouchMoved(Touch* touch, Event* event) {
     this->getChildByTag(1)->setPosition(touch->getLocation());
 }
